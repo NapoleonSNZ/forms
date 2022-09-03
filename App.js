@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import * as yup from "yup";
 import { Formik } from "formik";
-import { marginBottom } from "styled-system";
+import { marginBottom, paddingLeft } from "styled-system";
 
 export default class App extends Component {
   render() {
@@ -20,11 +20,12 @@ export default class App extends Component {
       borderWidth: 1,
       borderColor: "white",
       padding: 15,
-      borderRadius: 50,
+      borderRadius: 25,
       color: "white",
       marginBottom: 10,
       fontSize: 10,
     };
+
 
     const fondo1 = { require: "./assets/fondo1.jpg" };
 
@@ -88,19 +89,19 @@ export default class App extends Component {
                   }
                 />
                 <Text style={styles.titulo}>Formulario de Registro</Text>
-                <Text style={styles.titulo2}>Form con validaciones FORMIK - YUP </Text>
+                <Text style={styles.titulo2}>Validaciones FORMIK - YUP </Text>
 
-                 <Text style={styles.label}>Nombre:</Text>  
+                 <Text style={styles.label}>Nombres:</Text>  
                 <TextInput
                   value={values.nombre}
                   style={inputStyle}
                   onChangeText={handleChange("nombre")}
                   onBlur={() => setFieldTouched("nombre")}
-                  placeholder="Digite su primer nombre"
+                  placeholder="ej. Chepe Juan"
                   placeholderTextColor="#797979"
                 />
                 {touched.nombre && errors.nombre && (
-                  <Text style={{ fontSize: 12, color: "#FF0D10" }}>
+                  <Text style={{ fontSize: 10, color: "#FF0D10", marginLeft:60}}>
                     {errors.nombre}
                   </Text>
                 )}
@@ -110,11 +111,11 @@ export default class App extends Component {
                   style={inputStyle}
                   onChangeText={handleChange("apellido")}
                   onBlur={() => setFieldTouched("apellido")}
-                  placeholder="Digite su primer apellido"
+                  placeholder="ej.  Pérez Cruz"
                   placeholderTextColor="#797979"
                 />
                 {touched.apellido && errors.apellido && (
-                  <Text style={{ fontSize: 12, color: "#FF0D10" }}>
+                  <Text style={{ fontSize: 10, color: "#FF0D10", marginLeft:60 }}>
                     {errors.apellido}
                   </Text>
                 )}
@@ -124,11 +125,11 @@ export default class App extends Component {
                   style={inputStyle}
                   onChangeText={handleChange("edad")}
                   onBlur={() => setFieldTouched("edad")}
-                  placeholder="Cuantos años?"
+                  placeholder="##"
                   placeholderTextColor="#797979"
                 />
                 {touched.edad && errors.edad && (
-                  <Text style={{ fontSize: 12, color: "#FF0D10" }}>
+                  <Text style={{ fontSize: 10, color: "#FF0D10", marginLeft:60 }}>
                     {errors.edad}
                   </Text>
                 )}
@@ -142,7 +143,7 @@ export default class App extends Component {
                   placeholderTextColor="#797979"
                 />
                 {touched.correo && errors.correo && (
-                  <Text style={{ fontSize: 12, color: "#FF0D10" }}>
+                  <Text style={{ fontSize: 10, color: "#FF0D10", marginLeft:60 }}>
                     {errors.correo}
                   </Text>
                 )}
@@ -156,7 +157,7 @@ export default class App extends Component {
                   placeholderTextColor="#797979"
                 />
                 {touched.telefono && errors.telefono && (
-                  <Text style={{ fontSize: 12, color: "#FF0D10" }}>
+                  <Text style={{ fontSize: 10, color: "#FF0D10", marginLeft:60 }}>
                     {errors.telefono}
                   </Text>
                 )}
@@ -170,7 +171,7 @@ export default class App extends Component {
                   placeholderTextColor="#797979"
                 />
                 {touched.domicilio && errors.domicilio && (
-                  <Text style={{ fontSize: 12, color: "#FF0D10" }}>
+                  <Text style={{ fontSize: 10, color: "#FF0D10", marginLeft:60 }}>
                     {errors.domicilio}
                   </Text>
                 )}
@@ -182,21 +183,20 @@ export default class App extends Component {
                   onBlur={() => setFieldTouched("sueldo")}
                   placeholder="0.00"
                   placeholderTextColor="#797979"
-                  marginBottom="30"
                 />
                 {touched.sueldo && errors.sueldo && (
-                  <Text style={{ fontSize: 12, color: "#FF0D10" }}>
+                  <Text style={{ fontSize: 10, color: "#FF0D10", marginLeft:60 }}>
                     {errors.sueldo}
                   </Text>
                 )}
-
+              <View style={{ marginTop:30 }}>
                 <Button
-                  color="#4A235A"
+                  style={{ height:40 }}
+                  color="#A01864"
                   title="INGRESAR!"
                   disabled={!isValid}
                   onPress={handleSubmit}
-                  marginTop="40"
-                />
+                /></View>
               </ScrollView>
             </View>
           </ImageBackground>
