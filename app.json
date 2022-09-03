@@ -1,10 +1,11 @@
 {
   "expo": {
-    "name": "forms",
-    "slug": "forms",
+    "name": "ep1-046719",
+    "slug": "ep1-046719",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
