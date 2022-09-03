@@ -25,7 +25,6 @@ export default class App extends Component {
       marginBottom: 10,
     };
 
-    const image = { uri: "https://get.pxhere.com/photo/man-person-boy-photo-male-portrait-young-student-professional-profession-shirt-face-eyes-free-head-the-student-a-person-id-general-practitioner-id-card-the-id-card-795555.jpg" };
     const fondo1 = { require: "./assets/fondo1.jpg" };
 
     return (
@@ -84,7 +83,7 @@ export default class App extends Component {
                   style={styles.tinyLogo}
                   alt="My Awesome Image"
                   source={{
-                    uri: "https://img.freepik.com/foto-gratis/estudiante-libros-papeleria_1258-48204.jpg?w=740&t=st=1661906455~exp=1661907055~hmac=83c55fa7bd65172286df3ff2ce9b9ce97935c0f5c94fa0ffe1a050ebdfc6aaeb",
+                    uri: "https://img.freepik.com/foto-gratis/estilo-vida-belleza-moda-concepto-emociones-personas-gerente-oficina-mujer-asiatica-joven-ceo-expresion-complacida-pie-sobre-fondo-blanco-sonriendo-brazos-cruzados-sobre-pecho_1258-59329.jpg?w=900&t=st=1662183602~exp=1662184202~hmac=f27c2693b74e7a531c3e6820c425ce0133e3b05f7ccab4968c24e6f0eb031944",
                   }}
                 />
                 <Text style={styles.titulo}>Formulario Examen 1</Text>
@@ -191,7 +190,7 @@ export default class App extends Component {
 
                 <Button
                   color="#4A235A"
-                  title="Subir"
+                  title="INGRESAR!"
                   disabled={!isValid}
                   onPress={handleSubmit}
                 />
