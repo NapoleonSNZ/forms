@@ -20,9 +20,10 @@ export default class App extends Component {
       borderWidth: 1,
       borderColor: "white",
       padding: 15,
-      borderRadius: 10,
+      borderRadius: 50,
       color: "white",
       marginBottom: 10,
+      fontSize: 10,
     };
 
     const fondo1 = { require: "./assets/fondo1.jpg" };
@@ -82,12 +83,12 @@ export default class App extends Component {
                 <Image
                   style={styles.tinyLogo}
                   alt="My Awesome Image"
-                  source={{
-                    uri: "https://img.freepik.com/foto-gratis/estilo-vida-belleza-moda-concepto-emociones-personas-gerente-oficina-mujer-asiatica-joven-ceo-expresion-complacida-pie-sobre-fondo-blanco-sonriendo-brazos-cruzados-sobre-pecho_1258-59329.jpg?w=900&t=st=1662183602~exp=1662184202~hmac=f27c2693b74e7a531c3e6820c425ce0133e3b05f7ccab4968c24e6f0eb031944",
-                  }}
+                  source={
+                    require('./assets/photo.png')
+                  }
                 />
-                <Text style={styles.titulo}>Formulario Examen 1</Text>
-
+                <Text style={styles.titulo}>Formulario de Registro</Text>
+                <Text style={styles.titulo2}>Form con validaciones FORMIK - YUP </Text>
 
                  <Text style={styles.label}>Nombre:</Text>  
                 <TextInput
@@ -95,8 +96,8 @@ export default class App extends Component {
                   style={inputStyle}
                   onChangeText={handleChange("nombre")}
                   onBlur={() => setFieldTouched("nombre")}
-                  placeholder="Digite su nombre"
-                  placeholderTextColor="#FFF"
+                  placeholder="Digite su primer nombre"
+                  placeholderTextColor="#797979"
                 />
                 {touched.nombre && errors.nombre && (
                   <Text style={{ fontSize: 12, color: "#FF0D10" }}>
@@ -109,8 +110,8 @@ export default class App extends Component {
                   style={inputStyle}
                   onChangeText={handleChange("apellido")}
                   onBlur={() => setFieldTouched("apellido")}
-                  placeholder="Digite su apellido"
-                  placeholderTextColor="#FFF"
+                  placeholder="Digite su primer apellido"
+                  placeholderTextColor="#797979"
                 />
                 {touched.apellido && errors.apellido && (
                   <Text style={{ fontSize: 12, color: "#FF0D10" }}>
@@ -123,8 +124,8 @@ export default class App extends Component {
                   style={inputStyle}
                   onChangeText={handleChange("edad")}
                   onBlur={() => setFieldTouched("edad")}
-                  placeholder="Digite su Edad"
-                  placeholderTextColor="#FFF"
+                  placeholder="Cuantos años?"
+                  placeholderTextColor="#797979"
                 />
                 {touched.edad && errors.edad && (
                   <Text style={{ fontSize: 12, color: "#FF0D10" }}>
@@ -137,8 +138,8 @@ export default class App extends Component {
                   style={inputStyle}
                   onChangeText={handleChange("correo")}
                   onBlur={() => setFieldTouched("correo")}
-                  placeholder="Digite su Correo"
-                  placeholderTextColor="#FFF"
+                  placeholder="ej. micorreo@mail.com"
+                  placeholderTextColor="#797979"
                 />
                 {touched.correo && errors.correo && (
                   <Text style={{ fontSize: 12, color: "#FF0D10" }}>
@@ -151,8 +152,8 @@ export default class App extends Component {
                   style={inputStyle}
                   onChangeText={handleChange("telefono")}
                   onBlur={() => setFieldTouched("telefono")}
-                  placeholder="Digite su Teléfono"
-                  placeholderTextColor="#FFF"
+                  placeholder="####-####"
+                  placeholderTextColor="#797979"
                 />
                 {touched.telefono && errors.telefono && (
                   <Text style={{ fontSize: 12, color: "#FF0D10" }}>
@@ -165,8 +166,8 @@ export default class App extends Component {
                   style={inputStyle}
                   onChangeText={handleChange("domicilio")}
                   onBlur={() => setFieldTouched("domicilio")}
-                  placeholder="Digite su Domicilio"
-                  placeholderTextColor="#FFF"
+                  placeholder="Dirección exacta"
+                  placeholderTextColor="#797979"
                 />
                 {touched.domicilio && errors.domicilio && (
                   <Text style={{ fontSize: 12, color: "#FF0D10" }}>
@@ -179,8 +180,9 @@ export default class App extends Component {
                   style={inputStyle}
                   onChangeText={handleChange("sueldo")}
                   onBlur={() => setFieldTouched("sueldo")}
-                  placeholder="Digite su sueldo"
-                  placeholderTextColor="#FFF"
+                  placeholder="0.00"
+                  placeholderTextColor="#797979"
+                  marginBottom="30"
                 />
                 {touched.sueldo && errors.sueldo && (
                   <Text style={{ fontSize: 12, color: "#FF0D10" }}>
@@ -193,6 +195,7 @@ export default class App extends Component {
                   title="INGRESAR!"
                   disabled={!isValid}
                   onPress={handleSubmit}
+                  marginTop="40"
                 />
               </ScrollView>
             </View>
@@ -213,7 +216,15 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 20,
     fontWeight: "bold",
-    marginBottom: 15,
+    marginTop: 20,
+    alignSelf: "flex-start",
+  },
+  titulo2: {
+    color: "gray",
+    textAlign: "center",
+    fontSize: 10,
+    fontWeight: "bold",
+    marginBottom: 25,
     alignSelf: "flex-start",
   },
   image: {
@@ -231,7 +242,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: "white",
     marginBottom: 10,
-    marginStart: 3
+    marginStart: 15
   },
    boton : {
     padding: 40,
